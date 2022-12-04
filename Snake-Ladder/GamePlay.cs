@@ -89,5 +89,53 @@ namespace Snake_Ladder
         }
 
 
+        public void PlayerPositionExact100()
+        {
+            //local variable
+            int rollDice, playerPosition = 0;
+            int count = 0;
+
+            //To generate random number
+            Random random = new Random();
+            //List to check options
+            var list = new List<string> { "No Play", "Ladder", "Snake" };
+
+            //Conditions for user options
+            rollDice = random.Next(1, 6);
+            Console.WriteLine("Dice number is : " + rollDice);
+
+            //Print user options
+            Console.WriteLine("Player checks options 1.No Play  2.Ladder   3.Snake");
+
+            //Use random to check user option
+            int position = random.Next(list.Count);
+            Console.WriteLine("Player option is : " + list[position]);
+            if (playerPosition + rollDice < 100)
+            {
+                if (list[position] == "Ladder")
+                {
+                    playerPosition += rollDice;
+                }
+                if (list[position] == "Snake")
+                {
+                    playerPosition -= rollDice;
+                }
+            }
+            else if (playerPosition + rollDice == 100 && list[position] == "Ladder")
+            {
+                playerPosition += rollDice;
+
+            }
+
+            if (playerPosition < 0)
+            {
+                playerPosition = 0;
+            }
+            //Print to Console
+            Console.WriteLine("Player current position : " + playerPosition);
+            count++;
+            Console.WriteLine("Final position is :" + playerPosition);
+            Console.WriteLine("Total Moves:" + count);
+        }
     }
 }

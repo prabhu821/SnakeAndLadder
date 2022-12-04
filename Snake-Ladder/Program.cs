@@ -8,7 +8,8 @@
             while (flag)
             {
                 Console.WriteLine("\nSnake And Ladder Game");
-                Console.WriteLine("1.GameStart \n2.Roll Dice \n3.Checking Position \n4.Player Position Zero \n5.Exit");
+                Console.WriteLine("1.GameStart \n2.Roll Dice \n3.Checking Position " +
+                    "\n4.Player Position Zero \n5.Player Position Exact 100 \n6.Exit");
                 int options = Convert.ToInt32(Console.ReadLine());
                 GamePlay game = new GamePlay();
                 switch (options)
@@ -24,6 +25,9 @@
                         break;
                     case 4:
                         game.PlayerPositionZeroRestart();
+                        break;
+                    case 5:
+                        game.PlayerPositionExact100();
                         break;
                     default:
                         flag = false;
