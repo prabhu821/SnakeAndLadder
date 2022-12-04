@@ -8,13 +8,16 @@
             while (flag)
             {
                 Console.WriteLine("\nSnake And Ladder Game");
-                Console.WriteLine("1.GameStart \n2.Exit");
+                Console.WriteLine("1.GameStart \n2.Roll Dice \n3.Exit");
                 int options = Convert.ToInt32(Console.ReadLine());
+                GamePlay game = new GamePlay();
                 switch (options)
                 {
                     case 1:
-                        GamePlay game = new GamePlay();
                         game.Start();
+                        break;
+                    case 2:
+                        game.RollDice();
                         break;
                     default:
                         flag = false;
