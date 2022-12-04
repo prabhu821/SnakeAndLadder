@@ -13,8 +13,8 @@
                 switch (options)
                 {
                     case 1:
-                        Start start = new Start();
-                        start.GamePlay();
+                        GamePlay game = new GamePlay();
+                        game.Start();
                         break;
                     default:
                         flag = false;
