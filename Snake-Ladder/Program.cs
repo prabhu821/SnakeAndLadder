@@ -9,7 +9,7 @@
             {
                 Console.WriteLine("\nSnake And Ladder Game");
                 Console.WriteLine("1.GameStart \n2.Roll Dice \n3.Checking Position " +
-                    "\n4.Player Position Zero \n5.Player Position Exact 100 \n6.Exit");
+                    "\n4.Player Position Zero \n5.Player Position Exact 100 \n6.Position Of Dice Every Time Played \n7.Exit");
                 int options = Convert.ToInt32(Console.ReadLine());
                 GamePlay game = new GamePlay();
                 switch (options)
@@ -28,6 +28,9 @@
                         break;
                     case 5:
                         game.PlayerPositionExact100();
+                        break;
+                    case 6:
+                        game.PositionOfDiceEveryTimePlayed();
                         break;
                     default:
                         flag = false;
