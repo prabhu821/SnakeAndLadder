@@ -13,6 +13,7 @@ namespace SnakeAndLadderProblem
         public const int NO_PLAY = 0;
         public const int LADDER = 1;
         public const int SNAKE = 2;
+        public const int WINNING_POSITION = 100;
         static Random random = new Random();
         public int diceValue = random.Next(1, 7);
 
@@ -27,7 +28,7 @@ namespace SnakeAndLadderProblem
         {
             Console.WriteLine("Player1 roll dice then get number: " + diceValue);
         }
-
+        
         //UC3- Player then checks for a Option. They are No Play, Ladder or Snake.
         public void CheckOptions()
         {
@@ -47,6 +48,37 @@ namespace SnakeAndLadderProblem
                     position = position - diceValue;
                     Console.WriteLine("When get Snake then player position:   " + position);
                     break;
+            }
+        }
+        
+        //UC4- Repeat till the Player reaches the winning position 100.
+        public void WinningPosition()
+        {
+            while (position != WINNING_POSITION)
+            {
+                Random random = new Random();
+                int diceValue = random.Next(1, 7);
+                Random random1 = new Random();
+                int option = random1.Next(0, 3);
+                switch (option)
+                {
+                    case NO_PLAY:
+                        Console.WriteLine("When No Play then player stay in position:  " + position);
+                        break;
+                    case LADDER:
+                        position = position + diceValue;
+                        Console.WriteLine("When get Ladder then player position:  " + position);
+                        break;
+                    case SNAKE:
+                        position = position - diceValue;
+                        Console.WriteLine("When get Snake then player position:   " + position);
+                        if (position < 0)
+                        {
+                            position = 0;
+                        }
+                        break;
+                }
+                Console.WriteLine("player position is :" + position);
             }
         }
     }
