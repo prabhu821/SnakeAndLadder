@@ -9,7 +9,8 @@
             while (flag)
             {
                 Console.WriteLine("\nSelect option \n1.Start Game \n2.Player1 roll dice \n3.Player Then Check Options " +
-                    "\n4.Player Reaches the Winning Position \n5.Ensure Player Get Excat Winning Position \n6.Exit");
+                    "\n4.Player Reaches the Winning Position \n5.Ensure Player Get Excat Winning Position " +
+                    "\n6.Report Number Of Times Dice Played To Win Game \n7.Exit");
                 int options = Convert.ToInt32(Console.ReadLine());
                 Game game = new Game();
                 switch (options)
@@ -28,6 +29,9 @@
                         break;
                     case 5:
                         game.EnsurePlayerGetExcatWinningPosition();
+                        break;
+                    case 6:
+                        game.ReportNumberOfTimesDicePlayedToWinGame();
                         break;
                     default:
                         flag = false;
